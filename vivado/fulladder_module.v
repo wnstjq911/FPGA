@@ -12,5 +12,5 @@ module fulladd (a, b, ci, sum, co);
     assign w2 = w1 & ci;
     assign w3 = a & b;
     assign co = w2 | w3;
-
+ 
 endmodule
