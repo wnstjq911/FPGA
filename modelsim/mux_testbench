@@ -1,0 +1,27 @@
+`timescale 1ns / 1ns        
+module test_mux;
+reg [1:0] sel; 
+reg  en;
+reg [3:0] a; 
+reg [3:0] b;
+reg [3:0] c; 
+reg [3:0] d;
+                       
+wire [3:0] z;                         
+
+mux chip_mux(sel, en, a, b, c, d, z);       
+
+initial               
+begin   
+sel=00;en=1;a=0001;b=0010;c=0011;d=0100; #50;     
+sel=01;en=1;a=0001;b=0010;c=0011;d=0100; #50;  
+sel=10;en=1;a=0001;b=0010;c=0011;d=0100; #50;   
+sel=11;en=1;a=0001;b=0010;c=0011;d=0100; #50;
+
+sel=00;en=0;a=0001;b=0010;c=0011;d=0100; #50;     
+sel=01;en=0;a=0001;b=0010;c=0011;d=0100; #50;  
+sel=10;en=0;a=0001;b=0010;c=0011;d=0100; #50;     
+sel=11;en=0;a=0001;b=0010;c=0011;d=0100; #50;     
+end                
+
+endmodule    
