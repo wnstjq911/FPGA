@@ -1,0 +1,15 @@
+`timescale 1ns/ 1ns
+
+module testbench;
+reg [7:0] x; 
+wire [8:0] y;
+
+oddparity chip_oddparity(x,y);
+
+initial 
+begin 
+x=11110000; #100;
+x=11110001; #100;
+end 
+
+endmodule 
