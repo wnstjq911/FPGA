@@ -8,14 +8,14 @@ module CLK_LED (
     output reg led
 );
 
-reg [18:0] count;
+reg [25:0] count;
 
     always @ (posedge CLK, negedge rst_n) begin
     if(!rst_n) begin //rst_n 0
         led <=0;
 	count <= 0;
     end else begin 
-            if(count==19'b1111010000100100000) begin // clk가 1.000.000 일때의 최대 값 
+	    if(count==26'b10111110101111000010000000) begin // clk가 100M = 100.000.000 일때의 최대 값 
                led <= ~led;
    	       count <= 0;
             end
